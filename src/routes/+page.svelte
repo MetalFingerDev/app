@@ -3,6 +3,8 @@
 	import Card from '$lib/Card.svelte';
 	import Todo from '$lib/Todo.svelte';
 	import { Tv } from 'lucide-svelte';
+	import Avatar from '$lib/Avatar.svelte';
+	import sunnyLeone from '$lib/assets/sideeye.webp';
 </script>
 
 <!--html-->
@@ -24,12 +26,13 @@
 			</div>
 		</footer>
 	</Card>
-</section>
 
-<section>
 	<Card>
 		<Todo />
 	</Card>
+
+	
+	<Avatar src={sunnyLeone} alt="Sunny Leone" fallback="SL" />
 </section>
 
 <!--/html-->
@@ -38,6 +41,7 @@
 	section {
 		margin-top: 4rem;
 		display: grid;
+		grid-auto-flow:column ;
 		place-items: center;
 	}
 

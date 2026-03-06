@@ -6,9 +6,7 @@
 	import { setupConvex } from 'convex-svelte';
 	setupConvex(PUBLIC_CONVEX_URL);
 
-	import Avatar from '$lib/Avatar.svelte';
 	import ModeToggle from '$lib/ModeToggle.svelte';
-	import sunnyLeone from '$lib/assets/sideeye.webp';
 
 	let { children } = $props();
 </script>
@@ -22,7 +20,6 @@
 <header>
 	<ModeToggle />
 
-	<Avatar src={sunnyLeone} alt="Sunny Leone" fallback="SL" />
 </header>
 
 {@render children()}
@@ -35,5 +32,6 @@
 		align-items: center;
 		justify-content: center;
 		gap: 2rem;
+		padding: 1rem;
 	}
 </style>
