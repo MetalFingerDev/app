@@ -1,0 +1,141 @@
+/* --- Semantic Tokens --- */
+:root {
+	--radius: 2rem;
+	--time: 180ms;
+	--icon-size: 2rem;
+	--ease: cubic-bezier(0.4, 0, 0.2, 1);
+	--fonts: 'Helvetica Neue', Arial, sans-serif;
+
+	--gradient-engrave: linear-gradient(0deg, var(--fg) 5%, var(--mg));
+	--gradient-push: linear-gradient(0deg, var(--fg), var(--mg));
+
+	--gradient-embose: linear-gradient(0deg, var(--mg) 95%, var(--fg));
+	--gradient-pull: linear-gradient(0deg, var(--mg), var(--fg));
+
+	--success: hsl(142 70% 45%);
+	--warning: hsl(48 95% 50%);
+	--error: hsl(0 84% 60%);
+	--info: hsl(200 80% 45%);
+
+	--accent: hsl(0, 100%, 50%);
+	--shade: hsl(0, 50%, 50%);
+}
+
+/* --- Light Mode (Default) --- */
+:root[data-theme='light'] {
+	--bg: hsl(0 0% 85%);
+	--mg: hsl(0 0% 90%);
+	--fg: hsl(0 0% 95%);
+	--highlight: hsl(0 0% 100%);
+	--text: hsl(0 0% 5%);
+	--muted: hsl(0 0% 30%);
+	--border: hsl(0 0% 70%);
+	--glint: hsl(0 0% 80%);
+	--shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.15);
+}
+
+/* --- Dark Mode Overrides --- */
+:root[data-theme='dark'] {
+	--bg: hsl(0 0% 0%);
+	--mg: hsl(0 0% 5%);
+	--fg: hsl(0 0% 10%);
+	--highlight: hsl(0 0% 60%);
+	--text: hsl(0 0% 95%);
+	--muted: hsl(0 0% 70%);
+	--border: hsl(0 0% 30%);
+	--glint: hsl(0 0% 40%);
+	--shadow: 0px 2px 2px hsla(0, 0%, 100%, 0.2);
+}
+
+/* --- Reset Globals (User Agent Stylesheets) --- */
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	transition: all var(--time) var(--ease);
+}
+.no-transition {
+	transition: none !important;
+}
+
+html {
+	color-scheme: light dark;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	min-height: 100vh;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--fonts);
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Media and graphics */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Form elements inherit font styles */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	color: inherit;
+	background: transparent;
+	line-height: inherit;
+}
+
+/* Basic element resets */
+button {
+	cursor: pointer;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+textarea {
+	resize: vertical;
+}
+
+/* --- Remove animations ( reduced motion ) --- */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	::before,
+	::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
