@@ -25,6 +25,7 @@
 		flex-direction: column;
 		padding: 2rem;
 		gap: 2rem;
+		margin: 1rem;
 
 		background: var(--gradient-embose);
 		border: 2px solid var(--border);
